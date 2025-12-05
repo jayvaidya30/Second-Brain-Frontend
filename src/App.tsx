@@ -3,15 +3,26 @@ import { Button } from "./components/Button";
 import { PlusIcon } from "./Icons/PlusIcon";
 import { ShareIcon } from "./Icons/ShareIcon";
 import { Card } from "./components/Card";
+import { CreateContentModal } from "./components/CreateContentModal";
 
 function App() {
+  const [modalOpen, setModelOpen] = useState(true);
+
   return (
     <div className="p-4">
+      <CreateContentModal
+        open={modalOpen}
+        onClose={() => {
+          setModelOpen(false);
+        }}
+      />
+
       <div className="flex justify-end gap-4">
         <Button
           variant="primary"
           text="Add content"
           startIcon={<PlusIcon></PlusIcon>}
+          onClick={() => setModelOpen(true)}
         ></Button>
         <Button
           variant="secondary"

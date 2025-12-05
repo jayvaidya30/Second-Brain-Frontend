@@ -18,7 +18,7 @@ const defaultStyles = "px-4 py-2 rounded-md flex items-center";
 
 export const Button = (props: ButtonProps) => {
   return (
-    <button className={variantStyles[props.variant] + " " + defaultStyles}>
+    <button onClick={props.onClick} className={variantStyles[props.variant] + " " + defaultStyles}>
       <div className="pr-2">{props.startIcon}</div>
       {props.text}
     </button>
